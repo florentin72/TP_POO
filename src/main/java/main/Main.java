@@ -2,6 +2,9 @@ package main;
 import java.util.Date;
 import java.util.Scanner;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 import client.Personne;
 import compagnie.CompagnieAssurance;
 import contrats.ContratMRH;
@@ -12,7 +15,10 @@ public class Main {
 	
 	public static void main (String  [] args ) {
 		
-		
+	    final Logger logger = LogManager.getLogger(Main.class);
+		logger.debug("Log debug");
+		logger.info("Log info");
+		logger.error("Log Warning");
 		@SuppressWarnings("deprecation")
 		Date d1 = new Date (1995,7,5);
 		Personne p1 = new Personne ("PA", "Louche", d1, false);
