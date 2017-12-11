@@ -8,6 +8,7 @@ public class CompagnieAssurance {
 	
 	
 	private String nom ;
+
 	private ArrayList <Personne> personnes ;
 	
 	public CompagnieAssurance (String n) {
@@ -18,23 +19,79 @@ public class CompagnieAssurance {
 		
 	}
 	
+	public String getNom() {
+		return nom;
+	}
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+
+	public ArrayList<Personne> getPersonnes() {
+		return personnes;
+	}
+
+
+	public void setPersonnes(ArrayList<Personne> personnes) {
+		this.personnes = personnes;
+	}
+
+	
 	
 	public int obtenirNombreDeClients () {
 		
+		int nbClient =0;
+		for (Personne p : personnes) {
+			if (p.estClient()) {
+				
+				nbClient ++;
+				
+			}
+			
+			
+		}
 		
-		return 0;
+		
+		
+		return nbClient ;
 	}
 
 	
 	public int obtenirNombreDeProspects () {
 			
 			
-			return 0;
+		
+		int nbProspect =0;
+		for (Personne p : personnes) {
+			if (!p.estClient()) {
+				nbProspect ++;
+				
+			}
+			
+			
+		}
+		
+		
+		
+		return nbProspect ;
 		}
 	
 	public int obtenirNombreDeContrats () {
+		int nbContrat = 0;
 		
 		
-		return 0;
+		for (Personne p : personnes ) {
+			
+			if (p.estClient()){
+				
+				nbContrat = nbContrat + p.obtenirContrats().size();
+				
+			}
+			
+		}
+		
+		return nbContrat;
 	}
 }

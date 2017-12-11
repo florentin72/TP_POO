@@ -15,7 +15,7 @@ public class Personne {
 	private ArrayList <Personne> membresFamilles;
 	private ArrayList <Contrat> contrat;
 	
-	Personne (String n , String p , Date d , boolean e){
+	public Personne (String n , String p , Date d , boolean e){
 		
 		
 		
