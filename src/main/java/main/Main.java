@@ -1,5 +1,6 @@
 package main;
 import java.util.Date;
+import java.util.Scanner;
 
 import client.Personne;
 import compagnie.CompagnieAssurance;
@@ -19,10 +20,12 @@ public class Main {
 		ContratMRH c2 = new ContratMRH ("Contrat1MRH", true);
 		
 
+		@SuppressWarnings("deprecation")
 		Date d2 = new Date (1995,12,12);
 		Personne p2 = new Personne ("Dusse", "JC", d2, true);
 		
 		
+		@SuppressWarnings("deprecation")
 		Date d3 = new Date (1995,6,12);
 		Personne p3 = new Personne ("Boutreux", "Yael",  d3, true);
 		
@@ -38,6 +41,44 @@ public class Main {
 		
 		
 		
+		Scanner sc = new Scanner (System.in);
+		Personne p;
+		
+		System.out.println("Voulez vous creer un client (o/n)");
+		if (sc.nextLine().equals("o")) {
+			
+			System.out.println("Prenom : ");
+			String prenom = sc.nextLine();
+			
+			System.out.println("Nom : ");
+			String nom = sc.nextLine();
+			
+			System.out.println("Client ou pas ? (o/n)");
+			boolean client;
+			if (sc.nextLine().equals("o")) {
+				
+				client = true;
+				
+			}
+			else {
+				
+				
+				client = false ;
+			}
+			
+			p = new Personne(nom , prenom , d1 , client);
+			mma.getPersonnes().add(new Personne(nom , prenom , d1 , client));
+			
+			System.out.println("Souscrire un contrat ? (o/n) ");
+			
+			
+			
+			if (sc.nextLine().equals("o")) {
+				
+				
+			}
+			
+		}
 	
 		
 		

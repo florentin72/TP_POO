@@ -11,7 +11,7 @@ public class ComparatorPersonnes implements Comparator <Personne> {
 		
 		
 		
-		return p1.obtenirContrats().size() - p2.obtenirContrats().size();
+		return p2.obtenirContrats().size() - p1.obtenirContrats().size();
 		
 		
 		

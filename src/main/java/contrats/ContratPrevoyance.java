@@ -16,7 +16,6 @@ public class ContratPrevoyance extends Contrat {
 		return null;
 		
 		
-		
 	}
 		
 	

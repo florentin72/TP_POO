@@ -19,7 +19,6 @@ public abstract class Contrat {
 	
 	
 	
-	
 	public String getNumeroContrat() {
 		return numeroContrat;
 	}

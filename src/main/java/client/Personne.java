@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import contrats.Contrat;
+import contrats.ContratAuto;
+import contrats.ContratMRH;
 
 public class Personne {
 
 	
 	private boolean estUnClient ; 
-	private String nom;
-	private String prenom;
+
 	private Date dateDeNaissance;
 	private ArrayList <Personne> membresFamilles;
 	private ArrayList <Contrat> contrat;
@@ -26,7 +27,7 @@ public class Personne {
 		
 		membresFamilles = new ArrayList<Personne>();
 		contrat = new ArrayList<Contrat>();
-		
+
 		
 	}
 	
@@ -85,7 +86,16 @@ public class Personne {
 	
 	public void resilierContrat(String contrat ) {
 		
+	for (Contrat c : this.contrat) {
+			
+			if (c.getNumeroContrat().equals(contrat)) {
+				
+				c.setContratValide(false);
+				
+			}
+			
 		
+	}
 		
 	}
 	
@@ -100,13 +110,12 @@ public class Personne {
 		ArrayList<Contrat> cAuto = new ArrayList<Contrat>();
 		
 		for (Contrat c : contrat) {
-			if (c.getClass().equals("ContratAuto")) {
-				
-				
+			
+			if (c instanceof ContratAuto) {
 				cAuto.add(c);
 				
+			}	
 				
-			}
 			
 			
 		}
@@ -119,16 +128,20 @@ public class Personne {
 	}
 	
 	public ArrayList <Contrat> obtenirContratsMRH () {
-ArrayList<Contrat> cMHR = new ArrayList<Contrat>();
+		
+		
+		ArrayList<Contrat> cMHR = new ArrayList<Contrat>();
 		
 		for (Contrat c : contrat) {
-			if (c.getClass().equals("ContratMHR")) {
-				
-				
+			
+			if (c instanceof ContratMRH) {
 				cMHR.add(c);
 				
+			}	
 				
-			}
+			
+				
+			
 			
 			
 		}
@@ -159,6 +172,25 @@ ArrayList<Contrat> cMHR = new ArrayList<Contrat>();
 		
 	}
 
+	
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	private String nom;
+	private String prenom;
 }
 
 

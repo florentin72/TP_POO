@@ -1,7 +1,9 @@
 package compagnie;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 import client.Personne;
+import comparateur.ComparatorPersonnes;
 import contrats.Contrat;
 
 
@@ -104,4 +106,20 @@ public class CompagnieAssurance {
 		
 		return nbContrat;
 	}
+	
+	
+	public Personne obtenirPlusGrosClient() {
+		
+		personnes.sort(new ComparatorPersonnes());
+		return personnes.get(0);
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 }
