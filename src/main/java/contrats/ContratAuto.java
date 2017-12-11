@@ -7,9 +7,9 @@ public class ContratAuto extends Contrat {
 	
 	
 	
-	public ContratAuto () {
+	public ContratAuto (String n , boolean c ) {
 		
-		
+		super (n,c);
 		
 		
 		

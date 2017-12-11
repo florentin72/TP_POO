@@ -5,6 +5,18 @@ import java.util.List;
 
 public class ContratMRH extends Contrat {
 
+	
+	
+	
+	
+	
+	
+	public ContratMRH(String n, boolean c) {
+		super(n, c);
+		
+	}
+
+
 	public Contrat creationContrat () {
 		return null;
 		

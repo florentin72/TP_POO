@@ -2,6 +2,7 @@ package compagnie;
 import java.util.ArrayList;
 
 import client.Personne;
+import contrats.Contrat;
 
 
 public class CompagnieAssurance {
@@ -85,8 +86,17 @@ public class CompagnieAssurance {
 		for (Personne p : personnes ) {
 			
 			if (p.estClient()){
+				for (Contrat c : p.obtenirContrats()) {
+					
+					
+					if (c.isContratValide()) {
+					nbContrat = nbContrat +1;
+					}
+					
+				}
 				
-				nbContrat = nbContrat + p.obtenirContrats().size();
+				
+				
 				
 			}
 			

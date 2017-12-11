@@ -73,7 +73,7 @@ public class Personne {
 			
 			if (c.getNumeroContrat().equals(cont.getNumeroContrat())) {
 				
-				contrat.remove(c);
+				cont.setContratValide(false);
 				
 			}
 			
@@ -142,7 +142,19 @@ ArrayList<Contrat> cMHR = new ArrayList<Contrat>();
 	}
 	
 	public String toString () {
-		return nom;
+		
+		
+		String str = prenom + "  " + nom + "\n"; 
+		
+		for (Contrat c : contrat ) {
+			
+		str = str + "contrat numero : " + c.getNumeroContrat() + "\n";	
+			
+			
+		}
+		
+		
+		return str;
 		
 		
 	}

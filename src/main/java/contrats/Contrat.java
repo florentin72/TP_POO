@@ -8,6 +8,18 @@ public abstract class Contrat {
 	protected String numeroContrat;
 	protected boolean contratValide;
 	
+	
+	public Contrat (String n , boolean c  ) {
+		
+		this.numeroContrat = n;
+		this.contratValide = c;
+		
+		
+	}
+	
+	
+	
+	
 	public String getNumeroContrat() {
 		return numeroContrat;
 	}

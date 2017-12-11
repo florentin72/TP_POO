@@ -6,6 +6,12 @@ import java.util.List;
 public class ContratPrevoyance extends Contrat {
 	
 	
+	public ContratPrevoyance(String n, boolean c) {
+		super(n, c);
+
+	}
+
+
 	public Contrat creationContrat () {
 		return null;
 		
